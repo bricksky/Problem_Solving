@@ -41,7 +41,7 @@ int main(){
             total_credit += credit;
         } else if (grade == "F"){
             total += credit * 0.0;
-            total += credit;
+            total_credit += credit;
         }
     }
 
