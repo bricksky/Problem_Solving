@@ -20,8 +20,8 @@ int main() {
 
         while(i<j){
             swap(arr[i-1], arr[j-1]);
-            i++;
-            j--;
+            i++;    // 오른쪽으로 이동
+            j--;    // 왼쪽으로 이동
         }
     }
 
