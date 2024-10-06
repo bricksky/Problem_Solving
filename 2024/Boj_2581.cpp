@@ -33,6 +33,4 @@ int main(){
     } else {
         cout << sum << '\n' << vec[0];
     }
-
-
 }
