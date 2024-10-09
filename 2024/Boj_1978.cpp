@@ -20,7 +20,7 @@ int main(){
         if(count == 2){
             result++;
         }
-         count = 0;
+        count = 0;
     }
     cout << result << endl;
 }
