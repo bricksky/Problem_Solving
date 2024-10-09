@@ -10,12 +10,12 @@ int main(){
         cin >> n;
 
         // 종료되는 조건
-        if(n==-1)
+        if(n == -1)
             break;
         
         int sum = 0;
         int t = 0;
-        int arr[100'000];
+        int arr[50'000];
 
         // 약수 구하는 부분
         for(int i=1; i<n; i++){
@@ -37,7 +37,7 @@ int main(){
             }
             cout << endl;
         } else {
-            cout << n << "is Not Perfect." << endl;
+            cout << n << " is Not Perfect." << endl;
         }
     }
     return 0;
