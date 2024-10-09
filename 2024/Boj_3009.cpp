@@ -9,17 +9,15 @@ int main(){
     rx = x1;
     ry = y1;
 
-    if(rx == x2){
+    if(rx == x2)
         rx = x3;
-    } else if(rx == x3){
+    else if(rx == x3)
         rx = x2;
-    };
 
-    if(ry == y1){
+    if(ry == y2)
         ry = y3;
-    } else if(ry == y3){
+    else if(ry == y3)
         ry = y2;
-    }
 
-    cout << rx << ry << endl;
+    cout << rx << " " <<  ry << endl;
 }
