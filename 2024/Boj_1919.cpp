@@ -3,7 +3,6 @@
 
 using namespace std;
 int main(){
-    ios::sync_with_stdio(0);
     string s1, s2;
     cin >> s1 >> s2;
 
@@ -14,7 +13,7 @@ int main(){
         alphabet1[s1[i] - 'a']++;
     }
 
-    for(int i=0; i<s1.length(); i++){
+    for(int i=0; i<s2.length(); i++){
         alphabet2[s2[i] - 'a']++;
     }
 
