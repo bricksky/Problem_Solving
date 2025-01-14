@@ -9,7 +9,7 @@ int main(){
     for(int i=0; i<N.size(); i++){
         cout << N[i];
 
-        if(i%10 == 9){
+        if(i % 10 ==9){
             cout << endl;
         }
     }
