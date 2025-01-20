@@ -26,5 +26,7 @@ int main(){
         cout << q.front() << ", ";
         q.pop();
     }
+
+    // 출력
     cout << q.front() << ">" << endl;
 }
