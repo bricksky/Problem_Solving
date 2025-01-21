@@ -14,6 +14,7 @@ int main(){
         cin >> num[i];
     }
 
+    // 배열 전체를 오름차순으로 정렬한 케이스.
     sort(num, num+n);
 
     for(int i=0; i<n; i++){
