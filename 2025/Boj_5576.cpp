@@ -20,8 +20,8 @@ int main(){
     sort(w, w+10,  greater<int>());
     sort(k, k+10,  greater<int>());
 
-    result1 = w[8] + w[9] + w[10];
-    result2 = k[8] + k[9] + k[10];
+    result1 = w[0] + w[1] + w[2];
+    result2 = k[0] + k[1] + k[2];
 
-    cout << result1 << result2 << endl;
+    cout << result1 << " " << result2 << endl;
 }
