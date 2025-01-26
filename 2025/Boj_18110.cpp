@@ -29,11 +29,12 @@ int main(){
     int index = round(n * 0.15);
     double sum = 0;
 
-    // 합 까지 구한 결과
+    // 합 계산
     for(int i=index; i < n-index; i++){
         sum +=  numbers[i];
     }
 
-    result = round(sum / n - (index*2));
-    cout << result << '\n';
+    // 절사평균을 계산하고 반올림
+    result = round(sum / (n - 2 * index));
+    cout << result;
 }
