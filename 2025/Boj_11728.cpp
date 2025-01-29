@@ -23,5 +23,6 @@ int main(){
     for(int num : merged){
         cout << num << " ";
     }
-
+    
+    return 0;
 }
