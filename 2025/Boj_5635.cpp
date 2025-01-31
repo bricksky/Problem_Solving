@@ -20,6 +20,6 @@ int main()
 
     sort(v.begin(), v.end());
 
-    cout << v[0].second.second << '\n' << v[n-1].second.second << '\n';
+    cout << v[n-1].second.second << '\n' << v[0].second.second << '\n';
     return 0;
 }
