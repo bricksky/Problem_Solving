@@ -9,5 +9,5 @@ int main(){
 
     int result = a * (i-1) + 1;
 
-    cout << result << '\n'
+    cout << result << '\n';
 }
