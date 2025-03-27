@@ -1,21 +1,21 @@
 {
-    "configurations": [
-      {
-        "name": "Mac",
-        "includePath": [
-          "${workspaceFolder}/**",
-          "/usr/local/include"
-        ],
-        "defines": [],
-        "macFrameworkPath": [
-            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        ],
-        "compilerPath": "/usr/bin/clang",
-        "cStandard": "c17",
-        "cppStandard": "c++17",
-        "intelliSenseMode": "macos-clang-arm64"
-      }
-    ],
-    "version": 4
-  }
-  
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/Library/Developer/CommandLineTools/usr/include/c++/v1", // 표준 C++ 라이브러리
+        "/Library/Developer/CommandLineTools/usr/lib/clang/XX/include", // XX는 버전 (예: 15)
+        "/usr/include", // 기타 기본 헤더
+        "/System/Library/Frameworks", // macOS 프레임워크
+        "/Library/Frameworks"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "macos-clang-x64"
+    }
+  ],
+  "version": 4
+}
