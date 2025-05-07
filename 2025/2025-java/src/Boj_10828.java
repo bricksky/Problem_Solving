@@ -39,6 +39,7 @@ public class Boj_10828 {
                         System.out.println(stack.peek());
                     }
                     break;
+
             }
         }
     }
