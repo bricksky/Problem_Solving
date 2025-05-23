@@ -8,7 +8,7 @@ public class Boj_1463 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int x = Integer.parseInt(br.readLine());
-        int[] dp = new int[x+1];
+        int[] dp = new int[x + 1];
 
         // 테이블 정의, 점화식 찾기, 초깃값 정하기
         dp[1] = 0;
@@ -18,12 +18,12 @@ public class Boj_1463 {
             dp[i] = dp[i - 1] + 1;
 
             // 2로 나눌 떼
-            if (i % 2 == 0){
-                dp[i] = Math.min(dp[i], dp[i/2] +1);
+            if (i % 2 == 0) {
+                dp[i] = Math.min(dp[i], dp[i / 2] + 1);
             }
 
-            if(i%3==0){
-                dp[i] = Math.min(dp[i] , dp[i/3]+1);
+            if (i % 3 == 0) {
+                dp[i] = Math.min(dp[i], dp[i / 3] + 1);
             }
         }
         bw.write(String.valueOf(dp[x]));
