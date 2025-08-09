@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Boj_1929 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int m = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+
+        primeNumber(m, n);
+    }
+
+    static void primeNumber(int m, int n) {
+        int[] arr = new int[n + 1];
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 2; i <= n; i++) arr[i] = i;
+
+        for (int i = 2; i * i <= n; i++) {
+            if (arr[i] == 0) continue;
+            for (int j = i * i; j <= n; j += i) {
+                arr[j] = 0;
+            }
+        }
+
+        if (m < 2) m = 2;
+
+        for (int i = m; i <= n; i++) {
+            if (arr[i] != 0) sb.append(i).append('\n');
+        }
+        System.out.print(sb);
+    }
+}
