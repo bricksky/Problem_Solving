@@ -26,7 +26,7 @@ public class Boj_2295 {
         int result = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            for (int j = arr.length-1; j > 0; j--) {
+            for (int j = arr.length - 1; j > 0; j--) {
                 int k = arr[j] - arr[i];
                 if (sum.contains(k)) {
                     result = Math.max(arr[j], result);
