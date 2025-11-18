@@ -39,7 +39,7 @@ public class Boj_2470 {
             if (currentSum == 0) {
                 break;
             } else if (currentSum < 0) {
-               left++;
+                left++;
 
             } else if (currentSum > 0) {
                 right--;
