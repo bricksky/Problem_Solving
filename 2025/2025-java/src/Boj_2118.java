@@ -7,7 +7,7 @@ public class Boj_2118 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int arr[] = new int[n * 2];
+        int arr[] = new int[n];
         int totalSum = 0;
         int currentSum = 0;
 
@@ -20,7 +20,7 @@ public class Boj_2118 {
         int end = 0;
         int result = 0;
 
-        while (start < n && end < 2 * n) {
+        while (start < n && end < n) {
             int current = Math.min(currentSum, totalSum - currentSum);
             result = Math.max(result, current);
 
