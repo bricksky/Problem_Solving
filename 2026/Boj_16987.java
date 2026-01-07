@@ -1,0 +1,78 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Boj_16987 {
+
+    static Egg[] eggs;
+    static int n;
+    static int answer;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        n = Integer.parseInt(br.readLine());
+        eggs = new Egg[n];
+
+        for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            eggs[i] = new Egg(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+        }
+        solve(0);
+        System.out.println(answer);
+    }
+
+    static void solve(int pick) {
+        // base
+        if (pick == n) {
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                if (eggs[i].durability <= 0) {
+                    count++;
+                }
+            }
+            answer = Math.max(answer, count);
+            return;
+        }
+
+        // recursive
+        if (eggs[pick].durability > 0) {
+            boolean targetExists = false;
+            for (int target = 0; target < n; target++) {
+                if (pick == target) {
+                    continue;
+                }
+                if (eggs[target].durability > 0) {
+                    targetExists = true;
+                    eggs[pick].fight(eggs[target]);
+                    solve(pick + 1);
+                    eggs[pick].restore(eggs[target]);
+                }
+            }
+            if (!targetExists) solve(pick + 1);
+        } else {
+            solve(pick + 1);
+        }
+    }
+
+    static class Egg {
+        int durability;
+        int weight;
+
+        public Egg(int durability, int weight) {
+            this.durability = durability;
+            this.weight = weight;
+        }
+
+        public void fight(Egg other) {
+            this.durability -= other.weight;
+            other.durability -= this.weight;
+        }
+
+        public void restore(Egg other) {
+            this.durability += other.weight;
+            other.durability += this.weight;
+        }
+    }
+}
