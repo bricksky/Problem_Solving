@@ -1,16 +1,24 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Boj_1780V2 {
     static int n;
     static int[][] board;
     static int[] paper = new int[3];
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        n = Integer.parseInt(br.readLine());
         board = new int[n][n];
+
         for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
-                board[i][j] = sc.nextInt();
+                board[i][j] = Integer.parseInt(st.nextToken());
             }
 
         }
@@ -32,9 +40,9 @@ public class Boj_1780V2 {
     }
 
     static void cut(int r, int c, int length) {
-        if (!isSame(r, c, length)) {
+        if (isSame(r, c, length)) {
             int color = board[r][c];
-            paper[color]++;
+            paper[color + 1]++;
             return;
         }
 
