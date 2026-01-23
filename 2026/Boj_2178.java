@@ -32,12 +32,12 @@ public class Boj_2178 {
             }
         }
 
-        Queue<Point> q = new LinkedList<>();
-        q.add(new Point(1, 1));
+        Queue<NextPoint> q = new LinkedList<>();
+        q.add(new NextPoint(1, 1));
         visited[1][1] = 1;
 
         while (!q.isEmpty()) {
-            Point now = q.poll();
+            NextPoint now = q.poll();
             for (int i = 0; i < 4; i++) {
                 int nr = now.r + dr[i];
                 int nc = now.c + dc[i];
@@ -46,7 +46,7 @@ public class Boj_2178 {
                     continue;
                 if (visited[nr][nc] == 0 && map[nr][nc] == 1) {
                     visited[nr][nc] = visited[now.r][now.c] + 1;
-                    q.add(new Point(nr, nc));
+                    q.add(new NextPoint(nr, nc));
                 }
             }
         }
